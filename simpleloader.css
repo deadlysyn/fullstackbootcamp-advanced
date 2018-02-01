@@ -10,6 +10,23 @@
     animation: spinner 4s linear infinite;
 }
 
+.appears {
+    animation: appear 1s 3s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    font-weight: 700;
+    font-size: 3em;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 @keyframes spinner {
     0% {
         transform: rotate(0deg) scale(1);
