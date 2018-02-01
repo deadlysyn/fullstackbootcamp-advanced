@@ -11,8 +11,7 @@
 }
 
 .appears {
-    animation: appear 1s 3s;
-    animation-fill-mode: forwards;
+    animation: appear 1s 3s forwards;
     opacity: 0;
     font-weight: 700;
     font-size: 3em;
