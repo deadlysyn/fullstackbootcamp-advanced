@@ -1,4 +1,4 @@
-/* poor man's forEach */
+/* poor man's map */
 
 // stdlib's map takes an array and:
 // - creates a new array
