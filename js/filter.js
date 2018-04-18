@@ -31,7 +31,7 @@ Examples:
 */
 
 function filterByValue(arr, key){
-    return arr.filter(function(obj, index, array) {
+    return arr.filter(function(obj) {
         return obj.hasOwnProperty(key);
     });
 }
@@ -45,12 +45,9 @@ Examples:
 */
 
 function find(arr, searchValue){
-    var newArr = arr.filter(function(num, index, array) {
-        if (num === searchValue) {
-            return num;
-        }
-    });
-    return newArr[0];
+    return arr.filter(function(num) {
+        return num === searchValue
+    })[0];
 }
 
 /*
@@ -61,12 +58,9 @@ Examples:
 */
 
 function findInObj(arr, key, searchValue){
-    var newArr = arr.filter(function(obj, index, array) {
-        if (obj[key] && obj[key] === searchValue) {
-            return obj;
-        }
-    });
-    return newArr[0];
+    return arr.filter(function(obj) {
+        return obj[key] === searchValue;
+    })[0];
 }
 
 /*
@@ -81,11 +75,9 @@ Examples:
 function removeVowels(str){
     var vowels = "aeiou";
 
-    var newArr = str.toLowerCase().split('').filter(function (char, index, array) {
+    return str.toLowerCase().split('').filter(function (char) {
         return !vowels.includes(char);
-    });
-
-    return newArr.join('');
+    }).join('');
 }
 
 /*
@@ -97,7 +89,7 @@ Examples:
 */
 
 function doubleOddNumbers(arr){
-    return arr.filter(function(num, index, array) {
+    return arr.filter(function(num) {
         return num % 2 !== 0;
     }).map(x => x * 2);
 }
