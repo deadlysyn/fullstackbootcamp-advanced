@@ -49,15 +49,9 @@ Examples:
 */
 
 function hasNoDuplicates(arr){
-    return !arr.some(function(element, index, array) {
-       if (index === 0) {
-           return array.slice(1, arr.length).includes(element);
-       } else if (index === arr.length - 1) {
-           return array.slice(0, arr.length - 1).includes(element);
-       } else {
-           return array.slice(0, index - 1).concat(array.slice(index + 1, arr.length)).includes(element);
-       }
-    });
+    return arr.every(function(element) {
+        return arr.indexOf(element) === arr.lastIndexOf(element);
+    };
 }
 
 /*
@@ -77,7 +71,7 @@ Examples:
 
 function hasCertainKey(arr, key){
     return arr.every(function (object) {
-        return object.hasOwnProperty(key);
+        return key in object;
     });
 }
 
