@@ -9,19 +9,12 @@ Examples:
 */
 
 function specialMultiply(a,b){
-    if (a && b) {
-        return a*b;
-    } else if (a || b ) {
+    if (arguments.length === 1) {
         return function(p) {
-            if (a) {
-                return a*p;
-            } else {
-                return b*p;
-            }
+            return a*p;
         };
-    } else {
-        return null
     }
+    return a*b;
 }
 
 /*
@@ -56,12 +49,10 @@ function guessingGame(amount){
         } else {
             guesses++;
         }
-        if (guess === answer) {
-            return "You got it!";
-        } else if (guess > answer) {
-            return "Your guess is too high!"
-        } else if (guess < answer) {
-            return "Your guess is too low!"
+
+        if (guess === answer) return "You got it!"
+        else if (guess > answer) return "Your guess is too high!"
+        else if (guess < answer) return "Your guess is too low!"
         }
     };
 }
